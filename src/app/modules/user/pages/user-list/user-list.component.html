@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="notification">
+    <h1>User List</h1>
+    <button class="button is-primary" [class.is-loading]="(users$ | async).loading" (click)="fetchUsers()">Fetch Users</button>
+  </div>
+  <div class="columns">
+    <div class="column" *ngFor="let user of (users$ | async)?.data">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="{{user.avatar}}" alt="{{user.name}}">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">{{user.name}}</p>
+              <p class="subtitle is-6">@{{user.name.trim().trimLeft().toLowerCase()}}</p>
+            </div>
+          </div>
+
+          <div class="content">
+            <time>{{user.dateOfBirth * 1000 | date}}</time>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
