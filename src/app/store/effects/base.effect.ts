@@ -14,7 +14,10 @@ export class BaseEffect {
   api$(apiAction: IBaseApiAction, service: (arg?) => Observable<any>) {
     return createEffect(() =>
       this.actions$.pipe(
-        ofType(apiAction.load()),
+        ofType(
+          apiAction.load(),
+          apiAction.loadNoCache()
+        ),
         switchMap((action: IBaseActionModel<any>) =>
           service(action.payload).pipe(
             map(data => apiAction.success({data})),

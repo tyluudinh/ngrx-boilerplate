@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './pages/user-list/user-list.component';
-import { UserComponent } from './pages/user/user.component';
 import {FormsModule} from '@angular/forms';
 import {EffectsModule} from '@ngrx/effects';
 import {UserEffect} from '../../store/effects/user.effect';
 import {UserHttpService} from '../../core/http/user.http.service';
+import {UserComponent} from './user.component';
 
 
 @NgModule({
-  declarations: [UserListComponent, UserComponent],
+  declarations: [
+    UserListComponent,
+    UserComponent
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,

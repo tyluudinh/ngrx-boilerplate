@@ -1,5 +1,6 @@
 import {on} from '@ngrx/store';
 import {BaseApiAction, IBaseApiAction} from '../actions/base.action';
+import {IBaseActionModel} from '../models/base-action.model';
 
 export function BaseApiReducer(propKey: string, apiAction?: IBaseApiAction, key?: string) {
   if (!apiAction) {
@@ -12,6 +13,16 @@ export function BaseApiReducer(propKey: string, apiAction?: IBaseApiAction, key?
         ...state[propKey],
         payload: action.payload,
         loading: true,
+      }
+    })),
+    on(apiAction.loadNoCache, (state, action: IBaseActionModel<any>) => ({
+      ...state,
+      [propKey]: {
+        ...state[propKey],
+        payload: action.payload,
+        loading: true,
+        errors: null,
+        data: action.dataReset ? action.dataReset : null
       }
     })),
     on(apiAction.success, (state, action) => ({

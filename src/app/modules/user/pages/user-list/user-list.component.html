@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container container-fluid">
   <div class="notification">
     <h1>User List</h1>
-    <button class="button is-primary" [class.is-loading]="(users$ | async).loading" (click)="fetchUsers()">Fetch Users</button>
+    <button class="btn btn-primary" [class.is-loading]="(users$ | async).loading" (click)="fetchUsers()">Fetch Users</button>
   </div>
-  <div class="columns">
-    <div class="column" *ngFor="let user of (users$ | async)?.data">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let user of (users$ | async)?.data">
       <div class="card">
         <div class="card-content">
           <div class="media">

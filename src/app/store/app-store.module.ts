@@ -5,7 +5,6 @@ import {metaReducers, reducers} from './reducers';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
-import {UserEffect} from './effects/user.effect';
 import {BaseEffect} from './effects/base.effect';
 import {StoreRepository} from './repositories/store.repository';
 import {AppEffects} from './effects/app.effects';
@@ -21,7 +20,6 @@ import {AppEffects} from './effects/app.effects';
     ])
   ],
   providers: [
-    UserEffect,
     BaseEffect,
     StoreRepository
   ]

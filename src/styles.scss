@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+//@import "~@progress/kendo-theme-bootstrap/dist/all.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import '~swiper/dist/css/swiper.min.css';
+html, body {
+  font-family: 'Oswald', sans-serif;
+}

@@ -23,6 +23,6 @@ export class UserListComponent implements OnInit {
   }
 
   fetchUsers() {
-    this.storeRepository.dispatch(UserAction.listUser.load());
+    this.storeRepository.dispatch(UserAction.listUser.loadNoCache());
   }
 }
