@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class BaseHttpService {
-  private urlRoot = 'http://5e5f2b13b5c43c0014ef9612.mockapi.io/ngrx';
+  private urlRoot = 'https://5e5f2b13b5c43c0014ef9612.mockapi.io/ngrx';
 
   constructor(
     private http?: HttpClient

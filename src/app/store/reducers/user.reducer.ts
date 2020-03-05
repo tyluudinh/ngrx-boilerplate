@@ -2,7 +2,7 @@ import {ApiResultStateModel, initApiResultState} from '../models/api-result.mode
 import {
   UserAction,
 } from '../actions/user.action';
-import {createReducer} from '@ngrx/store';
+import {createReducer, Action} from '@ngrx/store';
 import {BaseApiReducer} from './api-base.reducer';
 import {UserModel} from '../models/user.model';
 
@@ -14,9 +14,12 @@ export const initialState: UserState = {
   users: initApiResultState([]),
   single: initApiResultState(null),
 };
-export const UserReducer = createReducer(
+const userReducer = createReducer(
     initialState,
     ...BaseApiReducer('users', UserAction.listUser),
     ...BaseApiReducer('single', UserAction.user),
   )
 ;
+export function reducer(state: UserState | undefined, action: Action) {
+  return userReducer(state, action);
+}

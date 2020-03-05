@@ -1,19 +1,19 @@
 import {
   ActionReducer,
   ActionReducerMap,
-  MetaReducer
+  MetaReducer,
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
-import {UserState, UserReducer} from './user.reducer';
+import * as fromUser from './user.reducer';
+
 
 export interface State {
-  user: UserState;
+  user: fromUser.UserState;
 }
 
-export const reducers: ActionReducerMap<State> = {
-  user: <any> UserReducer
+export const reducers = {
+  user: fromUser.reducer
 };
-
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
