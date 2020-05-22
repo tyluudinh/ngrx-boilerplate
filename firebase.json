@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/core-ngrx",
+    "public": "dist/ngrx-boilerplate",
     "ignore": [
       "firebase.json",
       "**/.*",

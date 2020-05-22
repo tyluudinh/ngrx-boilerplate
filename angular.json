@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "core-ngrx": {
+    "ngrx-boilerplate": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/core-ngrx",
+            "outputPath": "dist/ngrx-boilerplate",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "core-ngrx:build"
+            "browserTarget": "ngrx-boilerplate:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "core-ngrx:build:production"
+              "browserTarget": "ngrx-boilerplate:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "core-ngrx:build"
+            "browserTarget": "ngrx-boilerplate:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "core-ngrx-e2e": {
+    "ngrx-boilerplate-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "core-ngrx:serve"
+            "devServerTarget": "ngrx-boilerplate:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "core-ngrx:serve:production"
+              "devServerTarget": "ngrx-boilerplate:serve:production"
             }
           }
         },
@@ -135,7 +135,7 @@
       }
     }
   },
-  "defaultProject": "core-ngrx",
+  "defaultProject": "ngrx-boilerplate",
   "cli": {
     "defaultCollection": "@ngrx/schematics"
   }
